@@ -2,7 +2,8 @@ import Vue from "vue";
 import Router from "vue-router";
 
 import { Login, Register } from "../views/user";
-import { UserLayout } from "../layouts";
+import { Home } from '../views/admin/home/'
+import { UserLayout, AdminLayout } from "../layouts";
 
 Vue.use(Router);
 
@@ -29,6 +30,18 @@ export default new Router({
           path: "",
           name: "signup",
           component: Register
+        }
+      ]
+    },
+    {
+      path: "/",
+      name: "",
+      component: AdminLayout,
+      children: [
+        {
+          path: "",
+          name: "home",
+          component: Home
         }
       ]
     },
